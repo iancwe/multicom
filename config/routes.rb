@@ -9,7 +9,7 @@ end
 Rails.application.routes.draw do
   constraints SubdomainConstraint do
     resources :staffs
-    # root 'staffs#new'
+    root 'staffs#new'
   end
   resources :companies
   resources :users

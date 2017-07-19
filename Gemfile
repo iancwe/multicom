@@ -37,6 +37,8 @@ gem 'hirb'
 gem 'simple_form'
 # bootstrapping
 gem 'bootstrap-sass'
+# jquery gem
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
