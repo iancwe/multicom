@@ -1,7 +1,7 @@
 # setting up constraints on certain classes of subdomains
 class SubdomainConstraint
   def self.matches?(request)
-    subdomains = %w{ www admin }
+    subdomains = %w{ 'www','admin' }
     request.subdomain.present? && !subdomains.include?(request.subdomain)
   end
 end
@@ -9,6 +9,7 @@ end
 Rails.application.routes.draw do
   constraints SubdomainConstraint do
     resources :staffs
+    # root 'staffs#new'
   end
   resources :companies
   resources :users
