@@ -4,13 +4,11 @@ module ApplicationHelper
   # end
 
   def background_image_url
-    if Company.current.img_url == ''
-      puts "No tenant branding found"
-      puts "****************************************"
-    elsif true
-    else
-      puts Company.current.img_url
-      puts "****************************************"
+    # if company.current.img_url is not defined then run this
+    if defined?(Company.current.img_url) == nil
+      puts "Cant find company url"
+    elsif Company.current.img_url != $CompanyUrl
+      puts 'Running normal pathing'
       Company.current.img_url
     end
   end
